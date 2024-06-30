@@ -49,10 +49,6 @@ namespace Calculator
             {
                 Console.WriteLine($"{firstNum} / {secondNum} = {firstNum / secondNum}  ");
             }
-            else if (userMethod == "%")
-            {
-                Console.WriteLine($"{firstNum} % {secondNum} = {firstNum % secondNum}  ");
-            }
             else 
             {
                 Console.WriteLine("We dont have this method");
