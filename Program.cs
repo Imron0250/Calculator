@@ -1,30 +1,22 @@
-﻿/*
-    Bu dastur .NET haqida
-*/
-using System;
-using System.IO;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.Intrinsics.X86;
-using System.Threading.Tasks.Dataflow;
-using System.Xml;
+﻿using System;
+using System.Threading;
 
 namespace Calculator
 {
-    class Program 
+    class Program
     {
         static void Main()
         {
-            
-            Console.WriteLine("Enter values");
-            Console.Write("Enter number");
-            string firstUserValue = Console.ReadLine();
-            Console.Write("Second number");
-            string secondUserValue = Console.ReadLine();
 
-            Console.WriteLine("Converting values in progress....");
-            decimal firstNumber = Convert.ToDecimal(firstUserValue);
-            decimal secondNumber = Convert.ToDecimal(secondUserValue);
+            Console.WriteLine("Hello, pls enter number below ");
+            Console.Write("First number: ");
+            string firstUserNum = Console.ReadLine();
+            Console.Write("Second Number: ");
+            string secondUserNum = Console.ReadLine();
+
+            Console.WriteLine("Information is progressing....");
+            decimal firstNumber = Convert.ToDecimal(firstUserNum);
+            decimal secondNumber = Convert.ToDecimal(secondUserNum);
 
             Console.WriteLine("Here are your results");
             Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
@@ -32,6 +24,7 @@ namespace Calculator
             Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
             Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
             Console.WriteLine($"{firstNumber} % {secondNumber} = {firstNumber % secondNumber}");
+            
 
         }
     }
