@@ -40,7 +40,7 @@ namespace Calculator
                 break;
 
                 default :
-                    Console.WriteLine("Nigga we have only 2 options yes/no, you got it?");
+                    Console.WriteLine("Nigga we have only 2 options yes/no, you got it right?");
                 break;
             }
            }
