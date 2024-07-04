@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
+using System.ComponentModel;
+using System.IO.Compression;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -10,48 +13,78 @@ namespace Calculator
     {
         static void Main()
         {
-           
-           Console.WriteLine("Welcom to the fight club");
-           Console.Write("Pleas enter your name: ");
-           string userName = Console.ReadLine();
-           Console.Write("Pleas enter your second name: ");
-           string userLname = Console.ReadLine();
-            Console.Write("Pleas enter your age: ");
-           int userAge = Convert.ToInt32(Console.ReadLine());
 
-           string  fullName = $"{userName} {userLname} and your age is {userAge}";
-           if (userAge >= 18)
-           {
 
-            Console.WriteLine($"Welcom to the fight club {fullName}");
-            Console.Write("Do you want to now abote rules of fight club yes/no ?: ");
-            string usersAnswer = Console.ReadLine();
-            switch (usersAnswer)
+            Console.Write("Do you want to try the system calculator?: ");
+            string userChoose = Console.ReadLine();
+
+            if (userChoose == "yes")
             {
-                case "yes":
-                    Console.WriteLine("The first ruel of fight club, You do not talk about");
-                    Console.WriteLine("The second ruel of fight club, You DO NOT talk about FIGHT CLUB");
-                    Console.WriteLine("The third ruel of fight club, If someone says 'STOP' or goes limp, taps out the fight is over");
-                    Console.WriteLine("The fourth ruel of fight club,  Only two guys to a fight");
-                break;
-
-                case "no":
-                    Console.WriteLine("How you gonna bee a membor of fight club without knowing about rules you mother facker, go fack out form here");
-                break;
-
-                default :
-                    Console.WriteLine("Nigga we have only 2 options yes/no, you got it?");
-                break;
+                Calculator();
             }
-           }
-           else 
-           {
-            Console.WriteLine("Bro sorry but your age is not enaough");
-           }
-           
+            else 
+            {
+                Console.WriteLine("Ok fack you ");
+            }
 
-           
+            Console.Write("We have a lot of cars, do you want to see them?: ");
+            string carChoose = Console.ReadLine();
+
+            if (carChoose == "yes")
+            {
+                Cars();
+            }
+            else 
+            {
+                Console.WriteLine("I guess you gay or girl :(");
+            }
+        }
+
+        static void Cars()
+        {
+            string[] cars = {"BMW", "Mersedec", "Folts Wagen", "Bugati"};
+            cars[1] = "Damas";
+            Array.Sort(cars);
+            foreach(string i in cars)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static void Calculator()
+        {
+            Console.Write("Enter first number: ");
+            int firstNum = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter method [+, -, *, /, %]: ");
+            string userMethod = Console.ReadLine();
+            Console.Write("Enter second number");
+            int secondNum = Convert.ToInt32(Console.ReadLine());
+            string template = $"{firstNum} {userMethod} {secondNum} = ";
+
+            switch (userMethod)
+            {
+                case "+" : 
+                    Console.WriteLine($"{template} {firstNum+secondNum} ");
+                    break;
+                case "-" : 
+                    Console.WriteLine($"{template} {firstNum-secondNum} ");
+                    break;
+                case "*" : 
+                    Console.WriteLine($"{template} {firstNum*secondNum} ");
+                    break;
+                case "/" : 
+                    Console.WriteLine($"{template} {firstNum/secondNum} ");
+                    break;
+                case "%" : 
+                    Console.WriteLine($"{template} {firstNum%secondNum} ");
+                    break;
+                default:
+                    Console.WriteLine("Sorry but we dont have this arithmetical method :(");
+                    break;
+            }
 
         }
+
+
     }
 }
